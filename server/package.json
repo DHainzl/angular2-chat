@@ -10,5 +10,9 @@
   "dependencies": {
     "express": "^4.13.3",
     "sockjs": "^0.3.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DHainzl/angular2-chat.git"
   }
 }
