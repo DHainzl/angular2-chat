@@ -1,0 +1,14 @@
+{
+  "name": "angular2-chat-server",
+  "version": "1.0.0",
+  "description": "The server implementation for the angular2-chat.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "David Hainzl <david@dhainzl.at>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.13.3",
+    "sockjs": "^0.3.15"
+  }
+}

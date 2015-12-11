@@ -1,0 +1,21 @@
+{
+  "name": "angular2-chat-client",
+  "version": "1.0.0",
+  "description": "The client for the angular2-chat.",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc -p src -w",
+    "start": "live-server --open=src"
+  },
+  "author": "David Hainzl (david@dhainzl.at)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "md5": "^2.0.0",
+    "systemjs": "0.19.2"
+  },
+  "devDependencies": {
+    "live-server": "^0.8.2",
+    "typescript": "^1.7.3"
+  }
+}

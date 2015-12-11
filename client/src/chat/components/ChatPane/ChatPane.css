@@ -1,0 +1,77 @@
+.chat-pane-title {
+	height: 100px;
+}
+
+.user-list {
+	border: 1px solid #ccc;
+	border-left: none;
+	height: calc(100% - 150px);
+}
+.user-list .user {
+	margin-bottom: 5px;
+}
+.user-list .user img {
+	border-radius: 16px;
+}
+
+.chat-pane {
+	border: 1px solid #ccc;
+	height: calc(100% - 150px);
+	position: relative;
+}
+.write-pane {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.messages-pane {
+	height: calc(100% - 65px);
+	overflow: auto;
+	overflow-x: hidden;
+}
+.messages-pane .userMessage {
+	margin-top: 10px;
+}
+
+.messages-pane .systemMessage {
+	background-color: #ccc;
+	margin: 5px 20px;
+	text-align: center;
+	padding: 3px;
+	font-size: 12px;
+}
+.messages-pane .userMessage .messages {
+	border-radius: 7px;
+	padding: 7px;
+}
+.messages-pane .userMessage.foreign .messages {
+	background-color: #0020D6;
+	color: #fff;
+	border-bottom-left-radius: 0;
+}
+.messages-pane .userMessage.own .messages {
+	background-color: #1ab603;
+	border-bottom-right-radius: 0;
+}
+
+.messages-pane .userMessage .user {
+	margin-top: 5px;
+}
+.messages-pane .userMessage .user img {
+	border-radius: 18px;
+}
+.messages-pane .userMessage .user .username {
+	font-size: 12px;
+	line-height: 32px;
+	color: #777;
+}
+.messages-pane .userMessage.own .user img, .messages-pane .userMessage.own .user span {
+	float: right;
+}
+
+.messages-pane .userMessage.own .user .username {
+	padding-right: 7px;
+}
+.messages-pane .userMessage.foreign .user .username {
+	padding-left: 7px;
+}

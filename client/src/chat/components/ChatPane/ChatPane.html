@@ -1,0 +1,47 @@
+<div class="row chat-pane-title">
+	<h1>Chat Pane</h1>
+	<p>Logged in as {{user.username}} ({{user.email}})</p>
+</div>
+<div class="row">
+	<div class="col-xs-8 chat-pane">
+		<div class="messages-pane row">
+			<div class="col-xs-12">
+				<div class="userMessage row {{userMessage.user.id == user.id ? 'own' : 'foreign'}}" *ng-for="#userMessage of messages.messages">
+					<div *ng-if="userMessage.user.id != 'system'" class="{{userMessage.user.id == user.id ? 'col-xs-offset-4' : ''}} col-xs-8">
+						<div class="messages">
+							<div class="message" *ng-for="#message of userMessage.messages">
+								{{message}}
+							</div>
+						</div>
+						<div class="user clearfix">
+							<img src="https://secure.gravatar.com/avatar/{{userMessage.user.email | lowercase | md5}}.png?s=32&amp;d=identicon">
+							<span class="username">{{userMessage.user.username}}</span>
+						</div>
+					</div>
+					<div *ng-if="userMessage.user.id == 'system'">
+						<div class="systemMessage" *ng-for="#message of userMessage.messages">
+							{{message}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="write-pane">
+			<div class="col-xs-12">
+				<form class="input-group" (submit)="sendMessage()">
+					<input type="text" class="form-control" placeholder="Write something ..." [(ng-model)]="msg" required>
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit">Send</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-4 user-list">
+		<h3>Users online: {{userlist.length}}</h3>
+		<div class="user" *ng-for="#user of userlist">
+			<img src="https://secure.gravatar.com/avatar/{{user.email | lowercase | md5}}.png?s=32&amp;d=identicon">
+			{{user.username}}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular Chat</title>
+		<script src="//cdn.jsdelivr.net/sockjs/1.0.3/sockjs.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+		<script>
+			var sock = new SockJS('http://localhost:9999/echo');
+			sock.onopen = function () {
+				console.log('open');
+				sock.send(JSON.stringify({
+					type: 'connect',
+					data: {
+						username: 'David Priv.',
+						email: 'david@dhainzl.at'
+					}
+				}));
+			};
+			sock.onmessage = function (e) {
+				var msg = JSON.parse(e.data);
+				if (msg.type == 'message') {
+					var $msgs = $('#messages');
+					$msgs.html($msgs.html() + '<div class="message">' + msg.data.message + '</div>');
+				}
+			};
+			sock.onclose = function (close) {
+				console.log('close');
+			};
+
+			$(function() {
+				$('#sendMessage').click(function () {
+					var $msg = $('#message'),
+						data = JSON.stringify({
+							type: 'message',
+							data: {
+								message: $msg.val()
+							}
+						});
+					sock.send(data);
+					$msg.val('').focus();
+					return false;
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="messages"></div>
+		<form>
+			<input id="message" type="text" placeholder="message">
+			<button type="submit" id="sendMessage">Send Message</button>
+		</form>
+	</body>
+</html>

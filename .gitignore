@@ -1,0 +1,4 @@
+*sublime-workspace
+
+*.js.map
+client/src/chat/**/*.js
