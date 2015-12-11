@@ -29,3 +29,5 @@ npm start
 ```
 
 It should navigate automatically to the correct server.
+
+https://github.com/DHainzl/angular2-chat/client/src/assets/img/example.png
