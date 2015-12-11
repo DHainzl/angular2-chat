@@ -7,7 +7,7 @@
 				"*.js.map", "**/chat/**/*.js"
 			],
 			"folder_exclude_patterns": [
-				"node_modules", "dist"
+				"node_modules"
 			]
 		},
 	]
