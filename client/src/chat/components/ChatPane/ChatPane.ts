@@ -14,7 +14,7 @@ import { MD5Pipe } from '../../pipes/pipes';
 export class ChatPane {
 	private user: ChatUser;
 	private userlist: ChatUser[];
-	private messages: Masseges;
+	private messages: Messages;
 	private chatService: ChatService;
 
 	private msg: string;
@@ -22,7 +22,7 @@ export class ChatPane {
 	constructor(chatService: ChatService) {
 		this.chatService = chatService;
 
-		this.chatService.onMessage((type, originator, data) {
+		this.chatService.onMessage((type, originator, data) => {
 			if (type == 'message') {
 				var user = this.userlist.find(user => user.id == originator);
 				this.messages.addMessage(user, data.message);
