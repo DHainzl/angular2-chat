@@ -28,7 +28,7 @@
 		</div>
 		<div class="write-pane">
 			<div class="col-xs-12">
-				<form class="input-group" (submit)="sendMessage()">
+				<form class="input-group" (ng-submit)="sendMessage()">
 					<input type="text" class="form-control" placeholder="Write something ..." [(ng-model)]="msg" required>
 					<div class="input-group-btn">
 						<button class="btn btn-default" type="submit">Send</button>
