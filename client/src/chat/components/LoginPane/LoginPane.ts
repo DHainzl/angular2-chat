@@ -1,11 +1,11 @@
-import { Component, EventEmitter, CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/angular2';
+import { Component } from 'angular2/core';
 import { ChatService } from '../../services/services';
 import { ChatUser } from '../../models/models';
 
 @Component({
 	selector: 'login-pane',
 	templateUrl: 'chat/components/LoginPane/LoginPane.html',
-	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
+	directives: [],
 	inputs: [ 'user', 'userlist' ]
 })
 export class LoginPane {
