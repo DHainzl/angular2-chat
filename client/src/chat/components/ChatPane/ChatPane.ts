@@ -1,4 +1,4 @@
-import { Component, CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/angular2';
+import { Component } from 'angular2/core';
 import { ChatService } from '../../services/services';
 import { ChatUser, Messages } from '../../models/models';
 import { MD5Pipe } from '../../pipes/pipes';
@@ -6,7 +6,6 @@ import { MD5Pipe } from '../../pipes/pipes';
 @Component({
 	selector: 'chat-pane',
 	templateUrl: 'chat/components/ChatPane/ChatPane.html',
-	directives: [ CORE_DIRECTIVES, FORM_DIRECTIVES ],
 	pipes: [ MD5Pipe ],
 	inputs: [ 'user', 'userlist', 'messages' ],
 	styleUrls: [ 'chat/components/ChatPane/ChatPane.css' ]

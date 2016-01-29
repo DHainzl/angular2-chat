@@ -1,6 +1,6 @@
-<div class="container" *ng-if="!user.id">
+<div class="container" *ngIf="!user.id">
 	<login-pane [user]="user" [userlist]="userlist"></login-pane>
 </div>
-<div class="container" *ng-if="user.id">
+<div class="container" *ngIf="user.id">
 	<chat-pane [user]="user" [userlist]="userlist" [messages]="messages"></chat-pane>
 </div>

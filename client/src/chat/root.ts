@@ -1,4 +1,4 @@
-import { bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/angular2';
+import { Component } from 'angular2/core';
 import { ChatService } from './services/services';
 import { ChatUser, ChatUserMessage, Messages } from './models/models';
 import { LoginPane, ChatPane } from './components/components';
@@ -6,9 +6,9 @@ import { LoginPane, ChatPane } from './components/components';
 @Component({
 	selector: 'ng-chat',
 	templateUrl: 'chat/root.html',
-	directives: [LoginPane, ChatPane, CORE_DIRECTIVES, FORM_DIRECTIVES]
+	directives: [LoginPane, ChatPane ]
 })
-class ChatComponent {
+export class ChatComponent {
 	chatService: ChatService;
 
 	user: ChatUser = new ChatUser();
@@ -69,5 +69,3 @@ class ChatComponent {
 		chatService.open();
 	}
 }
-
-bootstrap(ChatComponent, [ChatService]);

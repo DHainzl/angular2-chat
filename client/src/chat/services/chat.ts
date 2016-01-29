@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/sockjs/sockjs" />
 
 export class ChatService {
-	URL: string = 'http://172.18.11.201:9999/echo';
+	URL: string = 'http://127.0.0.1:9999/echo';
 	sock: SockJS;
 	handlers = {};
 

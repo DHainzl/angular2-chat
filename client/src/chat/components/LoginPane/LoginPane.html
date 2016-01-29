@@ -1,19 +1,19 @@
 <h1>Login</h1>
-<div class="alert alert-danger" *ng-if="loginError != ''">{{loginError}}</div>
+<div class="alert alert-danger" *ngIf="loginError != ''">{{loginError}}</div>
 
-<form (ng-submit)="login()" class="form-horizontal">
+<form (ngSubmit)="login()" class="form-horizontal">
 	<div class="form-group">
 		<label for="username" class="col-sm-2 control-label">Username</label>
 		<div class="col-sm-10">
-			<input [(ng-model)]="user.username" type="text" class="form-control" id="username" placeholder="Username" required
-			ng-control="username" #username="form">
+			<input [(ngModel)]="user.username" type="text" class="form-control" id="username" placeholder="Username" required
+			ngControl="username" #username="ngForm">
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="email" class="col-sm-2 control-label">Email</label>
 		<div class="col-sm-10">
-			<input [(ng-model)]="user.email" type="email" class="form-control" id="email" placeholder="Email" required
-			ng-control="email" #email="form">
+			<input [(ngModel)]="user.email" type="email" class="form-control" id="email" placeholder="Email" required
+			ngControl="email" #email="ngForm">
 		</div>
 	</div>
 	<div class="form-group">
